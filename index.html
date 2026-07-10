@@ -11,7 +11,10 @@
         .section-recent h2 { border-left-color: #ffc107; color: #ffda6a; }
         .section-offline h2 { border-left-color: #6c757d; color: #ccc; }
         
-        .meta { color: #888; font-size: 0.9em; margin-bottom: 20px; }
+        .meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        /* ⬇️ 注釈用のデザインを追加 ⬇️ */
+        .note { color: #bbb; font-size: 0.85em; background: #222; padding: 10px 12px; border-radius: 4px; border-left: 3px solid #00ffff; margin-bottom: 25px; line-height: 1.4; }
+        
         .player-card { background: #2a2a2a; border-radius: 6px; padding: 15px; margin-bottom: 11px; display: flex; justify-content: space-between; align-items: center; }
         
         .status-online { background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
@@ -26,6 +29,10 @@
 
     <h1>IIDX アリーナモニター</h1>
     <div class="meta">最終更新日時: <span id="last-updated">-</span> (10分自動更新)</div>
+    
+    <div class="note">
+        💡 <strong>仕様ノート:</strong> 直近10分で累計勝利数またはアリーナキューブ数に変動があったプレイヤーを検知します。
+    </div>
     
     <div class="section-online">
         <h2>🔥 プレイ中</h2>
