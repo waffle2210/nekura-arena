@@ -8,11 +8,16 @@
         h1 { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 5px; }
         h2 { font-size: 1.2em; margin-top: 30px; margin-bottom: 15px; padding-left: 8px; border-left: 4px solid #333; }
         .section-online h2 { border-left-color: #28a745; color: #2ae85c; }
+        .section-recent h2 { border-left-color: #ffc107; color: #ffda6a; }
         .section-offline h2 { border-left-color: #6c757d; color: #ccc; }
+        
         .meta { color: #888; font-size: 0.9em; margin-bottom: 20px; }
         .player-card { background: #2a2a2a; border-radius: 6px; padding: 15px; margin-bottom: 11px; display: flex; justify-content: space-between; align-items: center; }
+        
         .status-online { background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
+        .status-recent { background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
         .status-offline { background: #e2e3e5; color: #383d41; padding: 4px 12px; border-radius: 4px; }
+        
         .time { font-size: 0.8em; color: #aaa; margin-top: 5px; }
         .empty-message { color: #666; font-style: italic; padding: 10px; font-size: 0.9em; }
     </style>
@@ -23,8 +28,13 @@
     <div class="meta">最終更新日時: <span id="last-updated">-</span> (10分自動更新)</div>
     
     <div class="section-online">
-        <h2>🔥 オンライン (プレイ中)</h2>
+        <h2>🔥 プレイ中</h2>
         <div id="online-list">読み込み中...</div>
+    </div>
+
+    <div class="section-recent">
+        <h2>⏱️ 1時間以内にプレイ</h2>
+        <div id="recent-list">読み込み中...</div>
     </div>
 
     <div class="section-offline">
@@ -40,23 +50,31 @@
                     document.getElementById('last-updated').innerText = data.last_updated;
                     
                     const onlineContainer = document.getElementById('online-list');
+                    const recentContainer = document.getElementById('recent-list');
                     const offlineContainer = document.getElementById('offline-list');
                     
                     onlineContainer.innerHTML = '';
+                    recentContainer.innerHTML = '';
                     offlineContainer.innerHTML = '';
 
-                    let hasOnline = false;
-                    let hasOffline = false;
+                    let countOnline = 0, countRecent = 0, countOffline = 0;
 
                     Object.keys(data.players).forEach(iidx_id => {
                         const player = data.players[iidx_id];
                         const card = document.createElement('div');
                         card.className = 'player-card';
 
-                        const isOnline = player.status === 'ONLINE';
-                        const statusClass = isOnline ? 'status-online' : 'status-offline';
+                        let statusClass = 'status-offline';
+                        let displayStatus = 'OFFLINE';
 
-                        // 勝利数やキューブ数の表示をすべて廃止し、スッキリさせました
+                        if (player.status === 'ONLINE') {
+                            statusClass = 'status-online';
+                            displayStatus = 'ONLINE';
+                        } else if (player.status === 'RECENT') {
+                            statusClass = 'status-recent';
+                            displayStatus = 'RECENT';
+                        }
+
                         card.innerHTML = `
                             <div>
                                 <strong style="font-size: 1.2em; color: #fff;">${player.custom_name}</strong> 
@@ -65,28 +83,29 @@
                                 <div class="time">最終アクティブ: ${player.last_active}</div>
                             </div>
                             <div>
-                                <span class="${statusClass}">${player.status}</span>
+                                <span class="${statusClass}">${displayStatus}</span>
                             </div>
                         `;
 
-                        if (isOnline) {
+                        if (player.status === 'ONLINE') {
                             onlineContainer.appendChild(card);
-                            hasOnline = true;
+                            countOnline++;
+                        } else if (player.status === 'RECENT') {
+                            recentContainer.appendChild(card);
+                            countRecent++;
                         } else {
                             offlineContainer.appendChild(card);
-                            hasOffline = true;
+                            countOffline++;
                         }
                     });
 
-                    if (!hasOnline) {
-                        onlineContainer.innerHTML = '<div class="empty-message">現在オンラインのプレイヤーはいません</div>';
-                    }
-                    if (!hasOffline) {
-                        offlineContainer.innerHTML = '<div class="empty-message">オフラインのプレイヤーはいません</div>';
-                    }
+                    if (countOnline === 0) onlineContainer.innerHTML = '<div class="empty-message">現在プレイ中のプレイヤーはいません</div>';
+                    if (countRecent === 0) recentContainer.innerHTML = '<div class="empty-message">1時間以内にプレイしたプレイヤーはいません</div>';
+                    if (countOffline === 0) offlineContainer.innerHTML = '<div class="empty-message">オフラインのプレイヤーはいません</div>';
                 })
                 .catch(err => {
                     document.getElementById('online-list').innerText = '';
+                    document.getElementById('recent-list').innerText = '';
                     document.getElementById('offline-list').innerText = 'データの読み込みに失敗しました。';
                 });
         }
