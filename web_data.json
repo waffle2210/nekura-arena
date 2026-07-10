@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-10 18:06:41",
+    "last_updated": "2026-07-10 18:18:36",
     "players": {
         "8974-9384": {
             "official_name": "MO-2.",
@@ -50,10 +50,10 @@
             "official_name": "Y-AX!S",
             "custom_name": "Y-AX!S",
             "memo": "ADX MAMY",
-            "wins": 45,
+            "wins": 46,
             "cubes": null,
-            "status": "OFFLINE",
-            "last_active": "データなし"
+            "status": "ONLINE",
+            "last_active": "2026-07-10 18:18:36"
         },
         "7504-3150": {
             "official_name": "TIHAYA",
