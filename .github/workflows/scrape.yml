@@ -9,6 +9,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
     permissions:
       contents: write # 実行結果をリポジトリに書き込む権限
 
