@@ -1,28 +1,124 @@
 {
-    "last_updated": "2026-07-10 04:38:37",
+    "last_updated": "2026-07-10 06:49:00",
     "players": {
-        "2056-8937": {
-            "official_name": "ZUTT",
-            "custom_name": "ZUTT",
-            "memo": "アリーナのライバル（トップランカー）",
-            "wins": 312,
+        "8974-9384": {
+            "official_name": "MO-2.",
+            "custom_name": "MO-2.",
+            "memo": "テクノワールド",
+            "wins": 52,
             "status": "OFFLINE",
             "last_active": "データなし"
         },
-        "1234-5678": {
+        "0226-0395": {
             "official_name": "圏外",
-            "custom_name": "タクヤ",
-            "memo": "地元のうまい人",
+            "custom_name": "CHMR",
+            "memo": "テクノワールド",
             "wins": 0,
             "status": "UNKNOWN (圏外)",
             "last_active": "データなし"
         },
-        "9999-9999": {
+        "2818-4520": {
             "official_name": "圏外",
-            "custom_name": "テスト太郎",
-            "memo": "備考欄テスト用",
+            "custom_name": "ENMT",
+            "memo": "テクノワールド",
             "wins": 0,
             "status": "UNKNOWN (圏外)",
+            "last_active": "データなし"
+        },
+        "8703-5572": {
+            "official_name": "RENO0M",
+            "custom_name": "HITA*",
+            "memo": "テクノワールド",
+            "wins": 96,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "2293-2944": {
+            "official_name": "A.K.A.",
+            "custom_name": "A.K.A.",
+            "memo": "ADX MAMY",
+            "wins": 156,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "6117-2219": {
+            "official_name": "Y-AX!S",
+            "custom_name": "Y-AX!S",
+            "memo": "ADX MAMY",
+            "wins": 45,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "7504-3150": {
+            "official_name": "TIHAYA",
+            "custom_name": "TIHAYA",
+            "memo": "ADX MAMY",
+            "wins": 12,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "3484-2467": {
+            "official_name": "BATORA",
+            "custom_name": "TANPA2",
+            "memo": "ADX MAMY",
+            "wins": 36,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "1467-9608": {
+            "official_name": "A-CUP.",
+            "custom_name": "IBUKI*",
+            "memo": "ファンタジスタ",
+            "wins": 57,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "9447-7393": {
+            "official_name": "1CREME",
+            "custom_name": "CXF",
+            "memo": "ファンタジスタ",
+            "wins": 119,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "6647-9821": {
+            "official_name": "DENTAK",
+            "custom_name": "DENTAK",
+            "memo": "ファンタジスタ",
+            "wins": 30,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "4038-1151": {
+            "official_name": "JD*ONG",
+            "custom_name": "GOLUSI",
+            "memo": "ファンタジスタ",
+            "wins": 69,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "0670-9324": {
+            "official_name": "SHIKIP",
+            "custom_name": "SHIKIP",
+            "memo": "CYGameworld",
+            "wins": 24,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "3247-5945": {
+            "official_name": "MR2N",
+            "custom_name": "MR2N",
+            "memo": "CYGameworld",
+            "wins": 68,
+            "status": "OFFLINE",
+            "last_active": "データなし"
+        },
+        "1643-9425": {
+            "official_name": "MOUKA",
+            "custom_name": "MOUKA",
+            "memo": "CYGameworld",
+            "wins": 54,
+            "status": "OFFLINE",
             "last_active": "データなし"
         }
     }
