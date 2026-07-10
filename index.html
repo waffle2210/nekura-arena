@@ -1,0 +1,12 @@
+card.innerHTML = `
+    <div>
+        <strong style="font-size: 1.2em;">${player.custom_name}</strong> 
+        <span style="color:#888; font-size:0.9em;">(DJ: ${player.official_name} / ID: ${iidx_id})</span><br>
+        <span style="color:#00ffff;">累計勝利数: ${player.wins}勝</span>
+        <div style="color:#ffc107; font-size:0.9em; margin-top:3px;">備考: ${player.memo}</div>
+        <div class="time">最終アクティブ: ${player.last_active}</div>
+    </div>
+    <div>
+        <span class="${statusClass}">${player.status}</span>
+    </div>
+`;
