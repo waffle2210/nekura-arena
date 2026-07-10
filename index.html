@@ -1,12 +1,67 @@
-card.innerHTML = `
-    <div>
-        <strong style="font-size: 1.2em;">${player.custom_name}</strong> 
-        <span style="color:#888; font-size:0.9em;">(DJ: ${player.official_name} / ID: ${iidx_id})</span><br>
-        <span style="color:#00ffff;">累計勝利数: ${player.wins}勝</span>
-        <div style="color:#ffc107; font-size:0.9em; margin-top:3px;">備考: ${player.memo}</div>
-        <div class="time">最終アクティブ: ${player.last_active}</div>
-    </div>
-    <div>
-        <span class="${statusClass}">${player.status}</span>
-    </div>
-`;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>IIDX アリーナ稼働状況モニター</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #fff; max-width: 600px; margin: 40px auto; padding: 20px; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .meta { color: #888; font-size: 0.9em; margin-bottom: 20px; }
+        .player-card { background: #2a2a2a; border-radius: 6px; padding: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .status-online { background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
+        .status-offline { background: #e2e3e5; color: #383d41; padding: 4px 12px; border-radius: 4px; }
+        .time { font-size: 0.8em; color: #aaa; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>IIDX アリーナモニター</h1>
+    <div class="meta">最終更新日時: <span id="last-updated">-</span> (10分自動更新)</div>
+    
+    <div id="monitor-list">読み込み中...</div>
+
+    <script>
+        function updateMonitor() {
+            // Pythonが生成したJSONを読み込む
+            fetch('./web_data.json?t=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('last-updated').innerText = data.last_updated;
+                    const container = document.getElementById('monitor-list');
+                    container.innerHTML = ''; // 画面をクリア
+
+                    Object.keys(data.players).forEach(iidx_id => {
+                        const player = data.players[iidx_id];
+                        const card = document.createElement('div');
+                        card.className = 'player-card';
+
+                        // オンライン状態によって色を変えるためのクラス判定
+                        const statusClass = player.status === 'ONLINE' ? 'status-online' : 'status-offline';
+
+                        // ★ここのHTML構造を綺麗に修復しました
+                        card.innerHTML = `
+                            <div>
+                                <strong style="font-size: 1.2em; color: #fff;">${player.custom_name}</strong> 
+                                <span style="color:#888; font-size:0.9em;">(DJ: ${player.official_name} / ID: ${iidx_id})</span><br>
+                                <span style="color:#00ffff; font-weight: bold;">累計勝利数: ${player.wins}勝</span>
+                                <div style="color:#ffc107; font-size:0.9em; margin-top:5px;">備考: ${player.memo}</div>
+                                <div class="time">最終アクティブ: ${player.last_active}</div>
+                            </div>
+                            <div>
+                                <span class="${statusClass}">${player.status}</span>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    document.getElementById('monitor-list').innerText = 'データの読み込みに失敗しました（スクレイピング実行前、またはJSONが見つかりません）。';
+                });
+        }
+
+        // 初回実行と自動リロード設定
+        updateMonitor();
+        setInterval(updateMonitor, 600000);
+    </script>
+</body>
+</html>
