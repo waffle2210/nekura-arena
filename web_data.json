@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-10 21:50:20",
+    "last_updated": "2026-07-10 22:00:24",
     "players": {
         "8974-9384": {
             "official_name": "MO-2.",
@@ -108,6 +108,15 @@
             "cubes": 129,
             "status": "ONLINE",
             "last_active": "2026-07-10 21:50:20"
+        },
+        "1582-8350": {
+            "official_name": "None",
+            "custom_name": "AGENT",
+            "memo": "CYGameworld",
+            "wins": 0,
+            "cubes": null,
+            "status": "UNKNOWN (圏外)",
+            "last_active": "データなし"
         },
         "0670-9324": {
             "official_name": "SHIKIP",
