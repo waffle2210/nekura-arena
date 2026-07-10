@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-10 21:30:18",
+    "last_updated": "2026-07-10 21:40:23",
     "players": {
         "8974-9384": {
             "official_name": "MO-2.",
@@ -104,10 +104,10 @@
             "official_name": "JD*ONG",
             "custom_name": "GOLUSI",
             "memo": "ファンタジスタ",
-            "wins": 69,
-            "cubes": 107,
-            "status": "OFFLINE",
-            "last_active": "データなし"
+            "wins": 70,
+            "cubes": 116,
+            "status": "ONLINE",
+            "last_active": "2026-07-10 21:40:23"
         },
         "0670-9324": {
             "official_name": "SHIKIP",
