@@ -5,12 +5,16 @@
     <title>IIDX アリーナ稼働状況モニター</title>
     <style>
         body { font-family: sans-serif; background: #1a1a1a; color: #fff; max-width: 600px; margin: 40px auto; padding: 20px; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 5px; }
+        h2 { font-size: 1.2em; margin-top: 30px; margin-bottom: 15px; padding-left: 8px; border-left: 4px solid #333; }
+        .section-online h2 { border-left-color: #28a745; color: #2ae85c; }
+        .section-offline h2 { border-left-color: #6c757d; color: #ccc; }
         .meta { color: #888; font-size: 0.9em; margin-bottom: 20px; }
-        .player-card { background: #2a2a2a; border-radius: 6px; padding: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .player-card { background: #2a2a2a; border-radius: 6px; padding: 15px; margin-bottom: 11px; display: flex; justify-content: space-between; align-items: center; }
         .status-online { background: #d4edda; color: #155724; padding: 4px 12px; border-radius: 4px; font-weight: bold; }
         .status-offline { background: #e2e3e5; color: #383d41; padding: 4px 12px; border-radius: 4px; }
         .time { font-size: 0.8em; color: #aaa; margin-top: 5px; }
+        .empty-message { color: #666; font-style: italic; padding: 10px; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -18,32 +22,46 @@
     <h1>IIDX アリーナモニター</h1>
     <div class="meta">最終更新日時: <span id="last-updated">-</span> (10分自動更新)</div>
     
-    <div id="monitor-list">読み込み中...</div>
+    <div class="section-online">
+        <h2>🔥 オンライン (プレイ中)</h2>
+        <div id="online-list">読み込み中...</div>
+    </div>
+
+    <div class="section-offline">
+        <h2>💤 オフライン</h2>
+        <div id="offline-list">読み込み中...</div>
+    </div>
 
     <script>
         function updateMonitor() {
-            // Pythonが生成したJSONを読み込む
             fetch('./web_data.json?t=' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('last-updated').innerText = data.last_updated;
-                    const container = document.getElementById('monitor-list');
-                    container.innerHTML = ''; // 画面をクリア
+                    
+                    const onlineContainer = document.getElementById('online-list');
+                    const offlineContainer = document.getElementById('offline-list');
+                    
+                    // 各領域を一旦クリア
+                    onlineContainer.innerHTML = '';
+                    offlineContainer.innerHTML = '';
+
+                    let hasOnline = false;
+                    let hasOffline = false;
 
                     Object.keys(data.players).forEach(iidx_id => {
                         const player = data.players[iidx_id];
                         const card = document.createElement('div');
                         card.className = 'player-card';
 
-                        // オンライン状態によって色を変えるためのクラス判定
-                        const statusClass = player.status === 'ONLINE' ? 'status-online' : 'status-offline';
+                        const isOnline = player.status === 'ONLINE';
+                        const statusClass = isOnline ? 'status-online' : 'status-offline';
 
-                        // ★ここのHTML構造を綺麗に修復しました
+                        // 累計勝利数の表示箇所を削除し、スッキリさせました
                         card.innerHTML = `
                             <div>
                                 <strong style="font-size: 1.2em; color: #fff;">${player.custom_name}</strong> 
                                 <span style="color:#888; font-size:0.9em;">(DJ: ${player.official_name} / ID: ${iidx_id})</span><br>
-                                <span style="color:#00ffff; font-weight: bold;">累計勝利数: ${player.wins}勝</span>
                                 <div style="color:#ffc107; font-size:0.9em; margin-top:5px;">備考: ${player.memo}</div>
                                 <div class="time">最終アクティブ: ${player.last_active}</div>
                             </div>
@@ -51,11 +69,28 @@
                                 <span class="${statusClass}">${player.status}</span>
                             </div>
                         `;
-                        container.appendChild(card);
+
+                        // ステータスに応じて振り分ける
+                        if (isOnline) {
+                            onlineContainer.appendChild(card);
+                            hasOnline = true;
+                        } else {
+                            offlineContainer.appendChild(card);
+                            hasOffline = true;
+                        }
                     });
+
+                    // 該当者がいない場合のフェイルセーフテキスト
+                    if (!hasOnline) {
+                        onlineContainer.innerHTML = '<div class="empty-message">現在オンラインのプレイヤーはいません</div>';
+                    }
+                    if (!hasOffline) {
+                        offlineContainer.innerHTML = '<div class="empty-message">オフラインのプレイヤーはいません</div>';
+                    }
                 })
                 .catch(err => {
-                    document.getElementById('monitor-list').innerText = 'データの読み込みに失敗しました（スクレイピング実行前、またはJSONが見つかりません）。';
+                    document.getElementById('online-list').innerText = '';
+                    document.getElementById('offline-list').innerText = 'データの読み込みに失敗しました。';
                 });
         }
 
