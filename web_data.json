@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-11 23:25:23",
+    "last_updated": "2026-07-11 23:35:23",
     "players": {
         "8974-9384": {
             "official_name": "MO-2.",
@@ -68,10 +68,10 @@
             "official_name": "BATORA",
             "custom_name": "TANPA2",
             "memo": "ADX MAMY",
-            "wins": 36,
+            "wins": 37,
             "cubes": null,
-            "status": "OFFLINE",
-            "last_active": "データなし"
+            "status": "ONLINE",
+            "last_active": "2026-07-11 23:35:23"
         },
         "1467-9608": {
             "official_name": "A-CUP.",
