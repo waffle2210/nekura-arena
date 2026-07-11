@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-11 16:34:28",
+    "last_updated": "2026-07-11 16:44:31",
     "players": {
         "8974-9384": {
             "official_name": "MO-2.",
@@ -95,10 +95,10 @@
             "official_name": "DENTAK",
             "custom_name": "DENTAK",
             "memo": "ファンタジスタ",
-            "wins": 33,
-            "cubes": null,
-            "status": "OFFLINE",
-            "last_active": "2026-07-10 21:10:16"
+            "wins": 34,
+            "cubes": 107,
+            "status": "ONLINE",
+            "last_active": "2026-07-11 16:44:31"
         },
         "4038-1151": {
             "official_name": "JD*ONG",
