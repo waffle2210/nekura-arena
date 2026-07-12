@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-12 17:20:33",
+    "last_updated": "2026-07-12 17:40:32",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
@@ -79,7 +79,7 @@
             "memo": "ファンタジスタ",
             "wins": 65,
             "cubes": null,
-            "status": "ONLINE",
+            "status": "RECENT",
             "last_active": "2026-07-12 17:20:33"
         },
         "9447-7393": {
@@ -97,7 +97,7 @@
             "memo": "ファンタジスタ",
             "wins": 41,
             "cubes": 212,
-            "status": "ONLINE",
+            "status": "RECENT",
             "last_active": "2026-07-12 17:20:33"
         },
         "4038-1151": {
