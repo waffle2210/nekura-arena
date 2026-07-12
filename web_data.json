@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-12 11:20:35",
+    "last_updated": "2026-07-12 11:40:35",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
@@ -33,7 +33,7 @@
             "custom_name": "HITA*",
             "memo": "テクノワールド",
             "wins": 96,
-            "cubes": 121,
+            "cubes": null,
             "status": "OFFLINE",
             "last_active": "データなし"
         },
