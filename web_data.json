@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-12 16:00:34",
+    "last_updated": "2026-07-12 16:20:36",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
@@ -77,10 +77,10 @@
             "official_name": "A-CUP.",
             "custom_name": "IBUKI*",
             "memo": "ファンタジスタ",
-            "wins": 60,
+            "wins": 62,
             "cubes": null,
-            "status": "OFFLINE",
-            "last_active": "2026-07-10 17:32:32"
+            "status": "ONLINE",
+            "last_active": "2026-07-12 16:20:36"
         },
         "9447-7393": {
             "official_name": "1CREME",
@@ -95,10 +95,10 @@
             "official_name": "DENTAK",
             "custom_name": "DENTAK",
             "memo": "ファンタジスタ",
-            "wins": 36,
-            "cubes": 166,
+            "wins": 38,
+            "cubes": 184,
             "status": "ONLINE",
-            "last_active": "2026-07-12 16:00:34"
+            "last_active": "2026-07-12 16:20:36"
         },
         "4038-1151": {
             "official_name": "JD*ONG",
@@ -141,9 +141,9 @@
             "custom_name": "MOUKA",
             "memo": "CYGameworld",
             "wins": 60,
-            "cubes": 174,
-            "status": "OFFLINE",
-            "last_active": "2026-07-11 17:54:36"
+            "cubes": 193,
+            "status": "ONLINE",
+            "last_active": "2026-07-12 16:20:36"
         }
     }
 }
