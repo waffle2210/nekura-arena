@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-12 18:00:34",
+    "last_updated": "2026-07-12 18:22:08",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
@@ -77,10 +77,10 @@
             "official_name": "A-CUP.",
             "custom_name": "IBUKI*",
             "memo": "ファンタジスタ",
-            "wins": 67,
-            "cubes": 141,
+            "wins": 68,
+            "cubes": 150,
             "status": "ONLINE",
-            "last_active": "2026-07-12 18:00:34"
+            "last_active": "2026-07-12 18:22:08"
         },
         "9447-7393": {
             "official_name": "1CREME",
@@ -97,7 +97,7 @@
             "memo": "ファンタジスタ",
             "wins": 41,
             "cubes": 212,
-            "status": "RECENT",
+            "status": "OFFLINE",
             "last_active": "2026-07-12 17:20:33"
         },
         "4038-1151": {
