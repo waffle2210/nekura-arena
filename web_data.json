@@ -1,14 +1,14 @@
 {
-    "last_updated": "2026-07-13 20:20:34",
+    "last_updated": "2026-07-13 20:40:34",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
             "custom_name": "MO-2.",
             "memo": "テクノワールド",
-            "wins": 58,
-            "cubes": 144,
-            "status": "OFFLINE",
-            "last_active": "2026-07-12 16:40:33"
+            "wins": 60,
+            "cubes": 163,
+            "status": "ONLINE",
+            "last_active": "2026-07-13 20:40:34"
         },
         "0226-0395": {
             "official_name": "None",
