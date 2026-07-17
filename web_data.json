@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-17 21:00:33",
+    "last_updated": "2026-07-17 21:20:34",
     "players": {
         "8974-9384": {
             "official_name": "NRO.",
@@ -43,7 +43,7 @@
             "memo": "ADX MAMY",
             "wins": 180,
             "cubes": 276,
-            "status": "RECENT",
+            "status": "OFFLINE",
             "last_active": "2026-07-17 20:00:37"
         },
         "6117-2219": {
@@ -86,10 +86,10 @@
             "official_name": "1CREME",
             "custom_name": "CXF",
             "memo": "ファンタジスタ",
-            "wins": 120,
-            "cubes": 145,
-            "status": "OFFLINE",
-            "last_active": "2026-07-14 22:40:36"
+            "wins": 121,
+            "cubes": 158,
+            "status": "ONLINE",
+            "last_active": "2026-07-17 21:20:34"
         },
         "6647-9821": {
             "official_name": "DENTAK",
@@ -104,10 +104,10 @@
             "official_name": "JD*ONG",
             "custom_name": "GOLUSI",
             "memo": "ファンタジスタ",
-            "wins": 77,
-            "cubes": 198,
-            "status": "OFFLINE",
-            "last_active": "2026-07-16 22:00:34"
+            "wins": 78,
+            "cubes": 206,
+            "status": "ONLINE",
+            "last_active": "2026-07-17 21:20:34"
         },
         "1582-8350": {
             "official_name": "None",
